@@ -1,0 +1,47 @@
+{% extends 'bases/paraSuperUser.html' %}
+{% from 'render/formularios.html' import render_field%}
+
+{% block encabezadoo %}
+    <h2>Crear User</h2>
+{% endblock %}
+
+{% block botonesMenu %}
+<li><a id="enlaceBoton" href="{{ url_for('SuperUserGet_DeleteUser') }}"><button type="button" class="btn btn-default">Eliminar Usuario</button></a></li>
+<li><a id="enlaceBoton" href="{{ url_for('SuperUserGet_ChangeKey') }}"><button type="button" class="btn btn-default">Cambiar Llave</button></a></li>
+{% endblock %}
+
+
+{% block contenedor %}
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+        <form method="POST">
+
+            <label for="Usuario">Usuario</label>
+            <dd>
+            <input class="form-control" id="Usuario" name="Usuario" type="text" value="">
+            <br>
+            <label for="Llave">Contraseña</label>
+            </dd>
+            <dd>
+            <input class="form-control" id="Llave" name="Llave" type="password" value="">
+            <br>
+            <label for="Idiomas">Idiomas</label>
+            </dd>
+            <dd>
+            <select class="form-control" id="Idiomas" multiple="" name="Idiomas">
+                {% for idioma in idiomas%}
+                <option value="{{idioma.Idioma_Pk}}">{{idioma.Idioma_Idioma}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg active" role="button"> Enviar </button>
+            </dd>
+
+        </form>
+    </div>
+
+    <div class="col-md-3"></div>
+
+{% endblock %}

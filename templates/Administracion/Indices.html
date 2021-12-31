@@ -1,0 +1,12 @@
+<h1>Crear indices</h1>
+
+{% for ll in info %}
+
+<h3>
+
+<a href="{{ url_for("Administracion_IndiceNumeroGet",pk_D = ll.Documento_Pk) }}">
+{{ll.Documento_Nombre}} -- {{ll.Documento_Version}}</a>
+
+</h3>
+
+{% endfor %}

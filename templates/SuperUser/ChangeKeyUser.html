@@ -1,0 +1,32 @@
+{% extends 'bases/paraSuperUser.html' %}
+{% from 'render/formularios.html' import render_field%}
+
+{% block encabezadoo %}
+    <h2>Cambiar llave User</h2>
+{% endblock %}
+
+{% block botonesMenu %}
+<li><a id="enlaceBoton" href="{{ url_for('SuperUserGet_CreateUser') }}"><button type="button" class="btn btn-default">Crear Usuario</button></a></li>
+<li><a id="enlaceBoton" href="{{ url_for('SuperUserGet_DeleteUser') }}"><button type="button" class="btn btn-default">Eliminar Usuario</button></a></li>
+{% endblock %}
+
+
+{% block contenedor %}
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+        <form method="POST">
+            {{ render_field(form.Usuario, class="form-control") }}
+            <br />
+            {{ render_field(form.NuevaLlave, class="form-control") }}
+            <br />
+            {{ render_field(form.NuevaLlave2, class="form-control") }}
+            <br />
+            <button type="submit" class="btn btn-primary btn-lg active" role="button"> Enviar </button>
+        </form>
+    </div>
+
+    <div class="col-md-3"></div>
+
+{% endblock %}

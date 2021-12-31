@@ -1,0 +1,74 @@
+{% extends 'bases/paraAdministracion.html' %}
+{% from 'render/formularios.html' import render_field%}
+
+{% block javascript%}
+
+{% endblock %}
+
+
+
+{% block botonesMenu %}
+
+{% endblock %}
+
+
+
+{% block encabezadoo %}
+
+{% endblock %}
+
+
+
+{% block contenedor %}
+
+    <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6">
+
+<h3>
+    <li>
+        <a id="enlaceBoton" href="{{url_for('Administracion_CrearDocumentoGet')}}">Crear Documento</a>
+    </li>
+</h3>
+<h3>
+    <li>
+        <a id="enlaceBoton" href="{{url_for('Administracion_IndiceGet')}}">Crear Indices</a>
+    </li>
+</h3>
+<h3>
+    <li>
+        <a id="enlaceBoton"  href="{{url_for('Administracion_CrearContenidoGet')}}">Crear Contenido</a>
+    </li>
+</h3>
+<hr>
+<h3>
+    <li>
+        <a id="enlaceBoton" href="{{url_for('Administracion_HabilitarDocumentoGet')}}">Habilitar Documento</a>
+    </li>
+</h3>
+<h3>
+    <li>
+        <a id="enlaceBoton" href="{{url_for('Administracion_HabilitarIndiceGet')}}">Habilitar Indice</a>
+    </li>
+</h3>
+<hr>
+<h3>
+    <li>
+        <a id="enlaceBoton" href="{{url_for('Administracion_CargarIdiomaGet')}}">Cargar Idioma</a>
+    </li>
+</h3>
+<h3>
+    <li>
+        <a id="enlaceBoton" href="{{url_for('Administracion_CargarTecnologiaGet')}}">Cargar Tecnologia</a>
+    </li>
+</h3>
+
+            </div>
+
+        <div class="col-md-3"></div>
+    </div>
+
+{% endblock %}
+
+
+

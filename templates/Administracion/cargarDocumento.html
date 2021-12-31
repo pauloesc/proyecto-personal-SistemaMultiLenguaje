@@ -1,0 +1,43 @@
+{% extends 'bases/paraAdministracion.html' %}
+{% from 'render/formularios.html' import render_field%}
+
+
+
+{% block javascript%}
+{% endblock %}
+
+
+
+{% block botonesMenu %}
+{% endblock %}
+
+
+
+{% block encabezadoo %}
+    <h3>Crear Documento</h3>
+{% endblock %}
+
+
+
+{% block contenedor %}
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+        <form method="POST">
+            {{ render_field(form.Nombre, class="form-control") }}
+            <br />
+            {{ render_field(form.Tecnologia, class="form-control") }}
+            <br />
+            {{ render_field(form.Version, class="form-control") }}
+            <br />
+            {{ render_field(form.Idioma, class="form-control") }}
+            <br />
+            <button type="submit" class="btn btn-primary btn-lg active" role="button"> Enviar </button>
+        </form>
+    </div>
+
+    <div class="col-md-4"></div>
+
+{% endblock %}
+

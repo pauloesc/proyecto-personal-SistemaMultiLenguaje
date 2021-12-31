@@ -1,0 +1,45 @@
+{% extends 'bases/paraAdministracion.html' %}
+{% from 'render/formularios.html' import render_field%}
+
+
+
+{% block javascript%}
+{% endblock %}
+
+
+
+{% block botonesMenu %}
+{% endblock %}
+
+
+
+{% block encabezadoo %}
+{% endblock %}
+
+
+
+{% block contenedor %}
+
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+
+	<h3>Habilitar indice</h3>
+
+    <form method="POST">
+
+    <select class="form-control" name="indice">
+    {% for info in lista %}
+    	<option value="{{info.IndiceHabilitado_Pk}}">{{info.Documento_Nombre}} -- {{info.Documento_Version}}</option>
+    {% endfor %}
+    </select>
+    	<br />
+
+        <button type="submit" class="btn btn-primary btn-lg active" role="button"> Enviar </button>
+    </form>
+</div>
+
+<div class="col-md-3"></div>
+
+{% endblock %}
+

@@ -1,0 +1,74 @@
+{% extends 'bases/paraAdministracion.html' %}
+{% from 'render/formularios.html' import render_field%}
+
+
+
+{% block javascript%}
+            <script type="text/javascript" src="{{ url_for('static', filename='Administracion/crearSeccion/crearSeccion.js') }}"></script>
+{% endblock %}
+
+
+
+{% block botonesMenu %}
+{% endblock %}
+
+
+
+{% block encabezadoo %}
+{% endblock %}
+
+
+
+{% block contenedor %}
+
+
+<form action="{{ url_for('Administracion_IndicePost') }}" method="POST">
+<input type="hidden" name="Nombre_tecnologia" value="{{ pkpk }}">
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><strong>#</strong></td>
+                    <td><strong>Indice N</strong></td>
+                    <td><strong>Nombre</strong></td>
+                </tr>
+            </thead>
+
+<tbody id="cuerpo">{%for info in datos%}<tr id="fila[{{loop.index}}]"><td name="numero[{{loop.index}}]">{{ loop.index  }}</td><td><input class="form-control" name="indice[{{loop.index}}]" value="{{info.Indice_Numero}}"></td><td><input class="form-control" name="nombre[{{loop.index}}]" value="{{info.Indice_Nombre}}"></td><td><input name="eliminar[{{loop.index}}]" type="button" value="Eliminar" class="btn btn-primary" onclick="Eliminar({{loop.index}})"></td><td><input name="crear[{{ loop.index }}]" type="button" value="Nueva fila" onclick="CrearIndice({{loop.index}})" class="btn btn-primary"></td></tr>{% endfor%}</tbody>
+            
+        </table>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-5">
+        <button onclick="CrearIndice('siguiente')" type="button" class="btn btn-primary" role="button">Nueva</button>
+    </div>
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-primary" role="button">Enviar</button>
+    </div>
+</div>
+
+</form>
+
+
+{% endblock %}
+
